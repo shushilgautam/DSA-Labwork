@@ -1,3 +1,4 @@
+// Write a program along with a clear algorithm to convert infix expression to prefix expression.
 #include <iostream>
 #include <stack>
 #include <string.h>
@@ -63,7 +64,8 @@ char reverse(char c)
 
 int main()
 {
-    string exp = "l+(2*k)-m*n+(o^p)*w/u/v*t+q";
+    string exp = "7+(2*4)-6*7+(5^3)/8*9+1";
+    cout<<"The expression : "<<exp<<endl;
     stack<char> st;
     string postfix;
     string prefix;
@@ -98,9 +100,7 @@ int main()
         else
 
         {
-            while ((!st.empty() && precedence(exp[i]) < precedence(st.top()))
-                   /*  || ((!st.empty() && precedence(exp[i]) == precedence(st.top())) && (!st.empty() && asscoiativity(exp[i]) == "LTR")) */)
-
+            while (!st.empty() && precedence(exp[i]) < precedence(st.top()))
             {
                 postfix = postfix + st.top();
                 st.pop();
@@ -119,7 +119,7 @@ int main()
     {
         prefix = prefix + reverse(postfix[i]);
     }
-    cout<< "\n" ;
+    cout << "\n";
     cout << "string reverse:" << expression << endl;
     cout << "\n";
     cout << "Postfix expression is:" << postfix << endl;

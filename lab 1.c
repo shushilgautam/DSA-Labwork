@@ -6,6 +6,14 @@ struct stack
     int items[max];
     int top;
 };
+void peek(struct stack *st)
+    {
+        if (st->top == -1)
+            printf("Stack is Empty \n") ;
+        else
+            printf("Top of the stack is:%d \n",st->items[st->top]);
+    }
+
 void push(struct stack *st, int value)
 {
     if ( st->top== max - 1)
@@ -43,6 +51,7 @@ int main()
     push(&st,10);
     push(&st,20);
     push(&st,30);
+    peek(&st);
     push(&st,40);
     display(&st);
     pop(&st);
@@ -50,6 +59,4 @@ int main()
     push(&st,60);
     display(&st);
     push(&st,70);
-
-
 }

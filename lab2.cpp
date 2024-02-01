@@ -47,7 +47,8 @@ string asscoiativity(char c)
 
 int main()
 {
-    string exp = "8+3*(9-6)/2^2+6/2";
+    string exp = "5+8*(7-6+4)/2^4+(7*5)/2";
+    cout<<"The Expression is : "<<exp<<endl;
     stack<char> st;
     string postfix;
     for (int i = 0; i < exp.length(); i++)
